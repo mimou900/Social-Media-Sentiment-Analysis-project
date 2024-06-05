@@ -1,34 +1,190 @@
 <!DOCTYPE html>
-<html lang="ar">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تحليل المشاعر</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap">
+    <!-- =====BOX ICONS===== -->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <title>Sentiment analysis on social networks in Arabic</title>
 </head>
-
 <body>
-    <div class="container">
-        <h1>تحليل المشاعر</h1>
-        <img src="(Arabic).png" alt="">
-        <div class="input-container">
-            <input type="text" id="query" placeholder="أدخل الكلمة للبحث" required>
-            <input type="number" id="num-posts" min="1" max="100" placeholder="عدد المنشورات" value="10">
-        </div>
-        <div class="button-container">
-            <button id="analyze-btn">تحليل</button>
-            <button id="clear-btn">مسح المحتوى</button>
-        </div>
-        <div id="loader" class="loader" style="display: none;">جاري التحليل...</div>
-        <div id="title-ratings" class="title-ratings-container">
-        </div>
-        <div id="total-rating" class="total-rating-container">
-        </div>
-    </div>
-    <script src="script.js"></script>
-</body>
+    <!--===== HEADER =====-->
+    <header class="l-header">
+        <nav class="nav bd-grid">
+           
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    
+                    
+                    <li class="nav__item"><a href="#about" class="nav__link">موضوع</a></li>
+                    <li class="nav__item"><a href="#LINK" class="nav__link ">رابط</a></li>
+                    
+                    <li class="nav__item"><a href="#PHRASE" class="nav__link">جملة</a></li>
+                    <li class="nav__item"><a href="#home" class="nav__link active">الصفحة الرئيسية</a></li>
+                    
+                </ul>
+            </div>
 
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+            <div>
+                <a href="#" class="nav__logo"> تحليل المشاعر </a>
+            </div>
+
+        </nav>
+    </header>
+
+    <main class="l-main">
+        <!--===== HOME =====-->
+        <section class="home bd-grid" id="home">
+            <div class="home__data">
+                <h1 class="home__title">تحليل المشاعر على<br><span class="home__title-color">شبكات التواصل الاجتماعي</span><br >باللغة العربية</h1>
+
+                <a href="#" class="button" id="scrollButton">إبدأ</a>
+            </div>
+
+        </br> 
+            <div class="blob">
+                
+                <img src="img/PIC3.png" alt="Picture Emoji" class="home__img">
+                
+            </div>
+        </section>
+
+        <!--===== ABOUT =====-->
+        <section class="about section " id="about">
+
+            <div class="about__container bd-grid">
+                <div class="about__img">
+                    <img src="img/PIC3.png" alt="">
+                </div>
+                    
+                <div class="about__form">
+
+
+                    <header class="center-align">تحليل المشاعر</header>
+                    <form action="#" class="form">
+                      
+    
+                      <div class="input-box right-align">
+                    
+                        <label>تحليل مشاعر تغريدات الريديت</label>
+                        <div class="select-box">
+                            <select>
+                              <option hidden>إختر مجال</option>
+                              <option>التكنولوجيا</option>
+                              <option>الطب والصحة</option>
+                              <option>الأعمال والإدارة</option>
+                              <option>رياضة</option>
+                              <option>الفنون والثقافة</option>
+                              <option>التربية والتعليم </option>
+                            </select>
+                          </div>
+                         
+                        <input type="text" placeholder=" أدخل موضوع " required />
+                        
+                            <div class="select-box">
+                              <select>
+                                <option hidden>عدد التغريدات</option>
+                                <option>5</option>
+                                <option>8</option>
+                                <option>10</option>
+                                <option>20</option>
+                              </select>
+                            </div>
+                            <button>تنبأ</button>
+                      
+                      
+                    </form>
+                    
+                </div>                                   
+            </div>
+        </section>
+
+        <section class="LINK section " id="LINK">
+
+            <div class="about__container bd-grid">
+               
+                    
+                <div class="about__form">
+
+
+                    <header class="center-align">تحليل المشاعر</header>
+                    <form action="#" class="form">
+                      
+    
+                      <div class="input-box right-align">
+                    
+                        <label>تحليل مشاعر تغريدات التويتر بإستعمال الرابط</label>
+                       
+                        <input type="text" placeholder=" أدخل الرابط" required />
+                        
+                            
+                            <button>تنبأ</button>
+                      
+                      
+                    </form>
+                    
+                </div> 
+                                                  
+            </div>
+            <div class="about__img twitter">
+                <img src="img/TW.png" alt="" style="left: 5cm;">
+            </div></div>
+        </section> 
+        <section class="PHRASE section " id="PHRASE">
+
+            <div class="about__container bd-grid">
+                <div class="about__img">
+                    <img src="img/PHRASE.png" alt="">
+                </div>
+                    
+                <div class="about__form">
+
+
+                    <header class="center-align">تحليل المشاعر</header>
+                    <form action="#" class="form">
+                      
+    
+                      <div class="input-box right-align">
+                    
+                        
+                      
+                      <div class="input-box  right-align">
+                        <label>تحليل مشاعر جملة</label>
+                        <input type="text" placeholder="أدخل جملة" required />
+                        
+                          
+                        </div>
+                        
+                      </div>
+                      <button>تنبأ</button>
+                    </form>
+                    
+                </div>                                   
+            </div>
+        </section>
+
+    </main>
+
+    <!--===== FOOTER =====-->
+    <footer class="footer">
+        <p class="footer__title">Sentiment analysis </p>
+        <div class="footer__social">
+            <a href="#" class="footer__icon"><i class='bx bxl-facebook' ></i></a>
+            <a href="#" class="footer__icon"><i class='bx bxl-instagram' ></i></a>
+            <a href="#" class="footer__icon"><i class='bx bxl-twitter' ></i></a>
+        </div>
+        <p class="footer__copy">&#169; SDIA STUDENT. All rights reserved</p>
+    </footer>
+
+
+    <!--===== SCROLL REVEAL =====-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!--===== MAIN JS =====-->
+    <script src="script-home.js"></script>
+</body>
 </html>

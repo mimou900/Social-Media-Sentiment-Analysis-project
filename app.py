@@ -30,7 +30,13 @@ def analyze():
             'error': 'No query provided. Please specify a query.'
         }), 400
 
-    submissions = reddit.subreddit('all').search(search_query, limit=100, time_filter='week')
+    limit = request.args.get('limit', default=10, type=int)
+    if limit < 1:
+        return jsonify({
+            'error': 'Invalid limit value. Please specify a positive integer.'
+        }), 400
+
+    submissions = reddit.subreddit('all').search(search_query, limit=limit, time_filter='week')
     title_ratings = []
     recent_titles = []
     total_positive = 0
@@ -48,10 +54,17 @@ def analyze():
         elif label == 'negative':
             total_negative += score
 
+        author_username = submission.author.name if submission.author else 'Unknown'
+        author_profile_picture = submission.author.icon_img if submission.author and submission.author.icon_img else ''
+
         title_ratings.append({
             'title': title,
             'label': label,
-            'score': score
+            'score': score,
+            'author': {
+                'username': author_username,
+                'profile_picture': author_profile_picture
+            }
         })
 
         recent_titles.append(title)
@@ -64,6 +77,7 @@ def analyze():
         },
         'recent_titles': recent_titles[-10:]
     })
+
 
 if __name__ == '__main__':
     app.run(debug=True)
