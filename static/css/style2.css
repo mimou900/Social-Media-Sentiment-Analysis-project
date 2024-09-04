@@ -575,6 +575,7 @@ img {
   width: 100%;
   margin-top: 20px;
 }
+
 .input-box label {
   color: #333;
   
@@ -594,12 +595,12 @@ img {
 .input-box.right-align label,
 .input-box.address.right-align input,
 
-.input-box.address.right-align label {
+.input-box.address.right-align label, textarea {
     text-align: right;
     direction: rtl;
 }
 
-.form :where(.input-box input, .select-box) {
+.form :where(.input-box input, .select-box, textarea) {
   position: relative;
   height: 50px;
   width: 100%;
@@ -611,7 +612,7 @@ img {
   border-radius: 6px;
   padding: 0 15px;
 }
-.input-box input:focus {
+.input-box input:focus .input-box textarea:focus{
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
 }
 .form .column {
@@ -636,16 +637,16 @@ img {
 .form .gender {
   column-gap: 5px;
 }
-.gender input {
+.gender input, textarea {
   accent-color: rgb(130, 106, 251);
 }
-.form :where(.gender input, .gender label) {
+.form :where(.gender input, .gender label, textarea) {
   cursor: pointer;
 }
 .gender label {
   color: #707070;
 }
-.address :where(input, .select-box) {
+.address :where(input, .select-box, textarea) {
   margin-top: 15px;
 }
 .select-box select {
